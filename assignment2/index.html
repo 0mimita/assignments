@@ -3,12 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uppgift 2</title>
+    <title>Hemmaträning - Uppgift 2</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Uppgift 2</h1>
+        <h1>Hemmaträning</h1>
         <nav id="main-nav"></nav>
     </header>
+
+    <main class="product-page-layout">
+        <section id="product-area">
+            <h2>Våra produkter</h2>
+            <div id="product-grid"></div>
+        </section>
+
+        <aside id="cart-sidebar">
+            <h2>Kundvagn</h2>
+            <ul id="cart-list"></ul>
+            <div class="cart-summary">
+                <p><strong>Totalpris:</strong> <span id="cart-total">0</span> kr</p>
+                <button id="clear-cart">Töm kundvagn</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>2026 Hemmaträning</p>
+    </footer>
+
+    <script type="module">
+        import { renderNavigation } from '../navigation.js';
+        renderNavigation('assignment2', true);
+    </script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
