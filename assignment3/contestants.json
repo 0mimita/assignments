@@ -1,0 +1,58 @@
+[
+  {
+    "id": "m-001",
+    "name": "Ragnhild Runvävar",
+    "image": "images/ragnhild.jpg",
+    "skillLevel": 8,
+    "catchphrase": "Runorna ljuger aldrig."
+  },
+  {
+    "id": "m-002",
+    "name": "Dimme Dubbelsynt",
+    "image": "images/dimme.jpg",
+    "skillLevel": 7,
+    "catchphrase": "Är det verkligen mig du ser?"
+  },
+  {
+    "id": "m-003",
+    "name": "Elsa Eldblåst",
+    "image": "images/elsa.jpg",
+    "skillLevel": 6,
+    "catchphrase": "Brinn, baby, brinn!"
+  },
+  {
+    "id": "m-004",
+    "name": "Frost-Filip",
+    "image": "images/filip.jpg",
+    "skillLevel": 6,
+    "catchphrase": "Lugna dig. Bokstavligen."
+  },
+  {
+    "id": "m-005",
+    "name": "Sigrid Skuggvisk",
+    "image": "images/sigrid.jpg",
+    "skillLevel": 7,
+    "catchphrase": null
+  },
+  {
+    "id": "m-006",
+    "name": "Bertil Blixtsnansen",
+    "image": "images/bertil.jpg",
+    "skillLevel": 6,
+    "catchphrase": "BOOM!"
+  },
+  {
+    "id": "m-007",
+    "name": "Mildred Mjölksyra",
+    "image": "images/mildred.jpg",
+    "skillLevel": 9,
+    "catchphrase": "Jag kan hålla på hela dagen."
+  },
+  {
+    "id": "m-008",
+    "name": "Okände Omar",
+    "image": "images/omar.jpg",
+    "skillLevel": 4,
+    "catchphrase": null
+  }
+]

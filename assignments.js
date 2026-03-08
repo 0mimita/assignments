@@ -10,5 +10,11 @@ export const assignments = [
         title: "Uppgift 2",
         link: "assignment2/index.html",
         description: "Produktsida för hemmaträning"
+    },
+    {
+        id: "assignment3",
+        title: "Uppgift 3",
+        link: "assignment3/index.html",
+        description: "Turneringsgeneratorn"
     }
 ];
