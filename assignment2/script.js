@@ -25,7 +25,8 @@ function renderProducts() {
         <img src="${p.image}" width="100">
         <h3>${p.name}</h3>
         <p>${p.description}</p>
-        <p><b>${p.price} kr<b></p>
+        <p><b>${p.price} kr</b></p>
+        <p><i>Kategori: ${p.category}</i></p>
         <button onclick="addToCart('${p.id}')">Köp</button>
         `;
 
@@ -36,6 +37,49 @@ function renderProducts() {
 }
 
 //cart function
+function updateCart() {
+    const cartList = document.getElementById('cart-list');
+    const totalSpan = document.getElementById('cart-total');
+
+    cartList.innerHTML = "";
+    let sum = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+    const item = cart[i];
+    const li = document.createElement('li');
+
+    li.innerText = `${item.name}(x${item.quantity}) - ${item.price * item.quantity} kr`;
+    cartList.appendChild(li);
+
+    sum = sum + (item.price * item.quantity);
+}
+totalSpan.innerText = sum;
+}
+
+window.addToCart = function(id) {
+    const product = products.find(p => p.id === id);
+
+    const existingItem = cart.find(item => item.id === id);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+} else {
+    cart.push({ ...product, quantity: 1});
+}
+    
+    localStorage.setItem('gymCart', JSON.stringify(cart));
+    updateCart();
+};
+
+const clearBtn = document.getElementById('clear-cart');
+if (clearBtn) {
+    clearBtn.onclick = function() {
+        cart = [];
+        localStorage.removeItem('gymCart');
+        updateCart();
+    };
+}
 
 //anropa funktion
 renderProducts();
+updateCart();
