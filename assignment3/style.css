@@ -1,0 +1,98 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffd1dc;
+    margin: 0;
+    color: #7d3c4b;
+    overflow-x: auto;
+}
+
+.controls {
+    text-align: center;
+    padding: 10px;
+}
+
+#reset-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #7d3c4b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.bracket {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 20px 40px;
+    min-height: 80vh;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.round:not(:first-child) {
+    justify-content: space-around;
+}
+
+.round h2 {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #1e1419;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.match-card {
+    background: white;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    width: 200px;
+    padding: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.participant {
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.vs {
+    text-align: center;
+    font-size: 0.7rem;
+    margin: 5px 0;
+    color: #1e1419;
+}
+
+.play-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.winner {
+    background-color: #ffd4ec;
+    border-left: 4px solid #c85e77;
+}
+
+.loser {
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+h1 {
+    margin: 0;
+    padding: 20px;
+    font-size: 1.8rem;
+    color: #7d3c4b;
+    white-space: nowrap;
+    align-self: center;
+}
