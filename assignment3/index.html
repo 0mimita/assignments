@@ -2,19 +2,31 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <title>Uppgift 3</title>
-    <link rel="stylesheet" href="../global.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magikermästerskapet</title>
+    <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Uppgift 3</h1>
+        <h1>Magikermästerskapet</h1>
         <nav id="main-nav"></nav>
     </header>
 
+    <main>
+        <div class="controls">
+            <button id="reset-btn">Börja om turneringen</button>
+        </div>
+
+        <div id="bracket" class="bracket"></div>
+    </main>
+
+    <script type="module" src="main.js"></script>
 <script type="module">
     import { renderNavigation } from '../navigation.js';
     renderNavigation('assignment3', true); 
-</script>
+</script>    
 </body>
 </html>
+
+
