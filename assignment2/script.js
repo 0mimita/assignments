@@ -17,15 +17,15 @@ function renderProducts() {
         const p = products[i];
 
         const card = document.createElement('div');
-        card.style.border = "1px solid black";
-        card.style.padding = "10px";
+
+        card.classList.add('product-card');
 
         //info kortet
         card.innerHTML = `
         <img src="${p.image}" width="100">
         <h3>${p.name}</h3>
         <p>${p.description}</p>
-        <p>${p.price}</p>
+        <p><b>${p.price} kr<b></p>
         <button onclick="addToCart('${p.id}')">Köp</button>
         `;
 
@@ -34,6 +34,8 @@ function renderProducts() {
 
     }
 }
+
+//cart function
 
 //anropa funktion
 renderProducts();
