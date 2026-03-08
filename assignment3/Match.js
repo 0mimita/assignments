@@ -13,7 +13,7 @@ export class Match {
     get winner() { return this.#winner; }
     get isPlayed() { return this.#isPlayed; }
 
-    render(onMatchDecided) {
+    render() {
         const div = document.createElement('div');
         div.className = 'match-card';
 
@@ -22,38 +22,32 @@ export class Match {
 
         div.innerHTML = `
         <div class="participant p1">
-        <h4>${this.#player1.name}</h4>
-        <p><i>"${quote1}"</i></p>
-        <small>Styrka: ${this.#player1.skillLevel ?? '?'}</small>
+            <h4>${this.#player1.name}</h4>
+            <p><i>"${quote1}"</i></p>
+            <small>Styrka: ${this.#player1.skillLevel ?? '5'}</small>
         </div>
         <div class="vs">VS</div>
         <div class="participant p2">
-        <h4>${this.#player2.name}</h4>
-        <p><i>"${quote2}"</i></p>
-        <small>Styrka: ${this.#player2.skillLevel ?? '?'}</small>
+            <h4>${this.#player2.name}</h4>
+            <p><i>"${quote2}"</i></p>
+            <small>Styrka: ${this.#player2.skillLevel ?? '5'}</small>
         </div>
-        <button class="play-btn">Avgör match</button>
         `;
 
         this.#element = div; 
-        div.querySelector('.play-btn').onclick = () => {
-            this.#calculateResult();
-            onMatchDecided();
-        };
         return div;
     }
 
-    #calculateResult() {
-    if (this.#isPlayed) return;
-
+    compete() {
+        if (this.#isPlayed) return;
         const s1 = this.#player1.skillLevel ?? 5; 
         const s2 = this.#player2.skillLevel ?? 5;
         const chanceP1 = s1 / (s1 + s2);
 
         this.#winner = Math.random() < chanceP1 ? this.#player1 : this.#player2;
         this.#isPlayed = true;
-
-        this.#updateUI();       
+        this.#updateUI();
+        return this.#winner;      
     }
 
     #updateUI() {
@@ -64,7 +58,5 @@ export class Match {
             if (name === this.#winner.name) p.classList.add('winner');
             else p.classList.add('loser');
         });
-        this.#element.querySelector('.play-btn').disabled = true;
-    }    
-
+    }
 }

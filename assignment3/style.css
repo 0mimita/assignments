@@ -96,3 +96,33 @@ h1 {
     white-space: nowrap;
     align-self: center;
 }
+
+.controls {
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#play-round-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: white;
+    color: #7d3c4b;
+    border: 2px solid #7d3c4b;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#play-round-btn:hover {
+    background-color: #ffd4ec;
+}
+
+#play-round-btn:disabled {
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+    border-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
