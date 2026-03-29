@@ -17,7 +17,35 @@
 
         <section id="api-data" style="margin-top: 20px; padding: 20px; background: rgba(255,255,255,0.05);"></section>
 
-        <section></section>
+    <section class="booking-section">
+        <h2>BOKA DIN VISTELSE</h2>
+        <form id="booking-form">
+        <label>Inchecking:</label>
+        <input type="date" id="checkin-date" required>
+
+        <label>Antal nätter:</label>
+        <input type="number" id="num-days" min="1" value="1" required>
+
+        <div class="extras">
+            <label><input type="checkbox" value="frukost" class="addon"> Frukost i källaren (+100kr/natt)</label><br>
+            <label><input type=" checkbox" value="seans" class="addon"> Nattlig seans (+500kr)</label>
+        </div>
+
+        <label>Kampanjkod:</label>
+        <input type="text" id="promo-code" placeholder="GHOST20">
+
+        <div class="total-price">
+            TOTALT PRIS: <span id="display-total">0</span> KR
+        </div>
+
+        <button type="submit" class="btn-book">BEKRÄFTA BOKNING</button>
+    </form>
+    <div id="booking-message"></div>
+    </section>
+
+    <a href="index.html" style="color: #38bdf8; display: block; margin-top: 20px;">Tillbaka till alla hus</a>
     </main>
+
+    <script type="module" src="js/house.js"></script>
   </body>
 </html>
