@@ -14,6 +14,10 @@ export class Booking {
             total += 500;
         }
 
+        if (extras.includes("spokvandring")) {
+            total += 300;
+        }
+
         if (promoCode === "GHOST20") {
             total = total * 0.8;
         }
