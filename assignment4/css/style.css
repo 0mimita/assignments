@@ -123,3 +123,9 @@ footer {
     border-top: 1px solid #334155;
     color: #475569;
 }
+
+.detail-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
