@@ -58,7 +58,7 @@ function renderHouse(house) {
 function updatePrice() {
   if (!bookingManager) return;
 
-  const nights = document.getElementById("num-days").value;
+const nights = parseInt(document.getElementById("num-days").value);
   const promo = document.getElementById("promo-code").value;
 
   const extras = [];
@@ -82,6 +82,9 @@ async function fetchWeather(lat, lng) {
     /*tyst fel*/
   }
 }
+
+bookingForm.addEventListener("input", updatePrice);
+bookingForm.addEventListener("change", updatePrice);
 
 bookingForm.addEventListener("submit", (e) => {
   e.preventDefault();
