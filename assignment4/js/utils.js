@@ -5,7 +5,7 @@ export function getScareLevelText(level) {
         1: "MYSIGT",
         2: "LITE LÄSKIGT",
         3: "OBEHAGLIGT",
-        4: "SKRÄCKINHAGANDE",
+        4: "SKRÄCKINJAGANDE",
         5: "REN TERROR"
     };
 
