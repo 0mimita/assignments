@@ -77,17 +77,34 @@ async function fetchWeather(lat, lng) {
     } catch (e) { /*tyst fel*/ }
 }
 
-bookingForm.addEventListener("input", updatePrice);
 bookingForm.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const date = document.getElementById("checkin-date").value;
     const nights = document.getElementById("num-days").value;
+    const promo = document.getElementById("promo-code").value;
+
+    const extras = [];
+    document.querySelectorAll(".addon:checked").forEach(box => extras.push(box.value));
+
     const result = bookingManager.validate(date, nights);
-    
+
+    const messageDiv = document.getElementById("booking-message");
+
     if (result === true) {
-        alert("Bokat! Vi ses i dimman.");
+        const total = bookingManager.calculateTotal(nights, extras, promo);
+
+        messageDiv.innerHTML = `
+            <h3>Bokning bekräftad</h3>
+            <p><strong>Hus:</strong> ${currentHouse.name}</p>
+            <p><strong>Datum:</strong> ${date}</p>
+            <p><strong>Nätter:</strong> ${nights}</p>
+            <p><strong>Tillägg:</strong> ${extras.length ? extras.join(", ") : "Inga"}</p>
+            <p><strong>Totalpris:</strong> ${total} kr</p>
+            <p>Tack för din bokning</p>
+        `;
     } else {
-        alert(result);
+        messageDiv.innerHTML = `<p style="color:red;">${result}</p>`;
     }
 });
 
